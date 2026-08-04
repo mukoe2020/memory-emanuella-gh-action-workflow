@@ -13,6 +13,12 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
+    permissions:
+      # Required to allow actions/checkout to clone the repository onto the runner
+      contents: read
+      # Required to allow the vitest coverage action to write a comment into the pull request
+      pull-requests: write
+    # ... rest of the node.js.yml
 
     strategy:
       matrix:
